@@ -373,6 +373,7 @@ class Chosen extends AbstractChosen
 
   result_deselect: (pos) ->
     result_data = @results_data[pos]
+    console.log(result_data)
 
     if not @form_field.options[result_data.options_index].disabled
       result_data.selected = false

@@ -46,6 +46,8 @@ class @Chosen extends AbstractChosen
     this.results_build()
     this.set_tab_index()
     this.set_label_behavior()
+
+  on_ready: ->
     @form_field.fire("chosen:ready", {chosen: this})
 
   register_observers: ->
@@ -466,6 +468,9 @@ class @Chosen extends AbstractChosen
         break
       when 13
         evt.preventDefault() if this.results_showing
+        break
+      when 32
+        evt.preventDefault() if @disable_search
         break
       when 38
         evt.preventDefault()
